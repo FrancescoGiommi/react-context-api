@@ -53,7 +53,9 @@ Bonus -
 
 La struttura dell’App deve essere
 
-App.jsx > PostsPage.jsx > PostsList.jsx > PostCard.jsxBonus
+App.jsx > PostsPage.jsx > PostsList.jsx > PostCard.jsx
+
+Bonus
 
 Recuperare la lista delle categorie in App.jsx tramite una chiamata a un’API. */
 
@@ -66,6 +68,8 @@ import NotFoundPage from "./pages/NotFoundPages";
 import IndexPosts from "./pages/posts/IndexPosts";
 import ShowPost from "./pages/posts/ShowPosts";
 import StorePost from "./pages/posts/StorePosts";
+import PostPage from "./components/PostsPage";
+import PostList from "./components/PostsList";
 
 /* Import context */
 import { PostContextProvider } from "./contexts/PostContext";
@@ -86,6 +90,8 @@ function App() {
             <Route path="/about" Component={AboutPage} />
             {/* Not Found */}
             <Route path="*" Component={NotFoundPage} />
+            <Route path="/postsPage" Component={PostPage} />
+            <Route path="/postList" Component={PostList} />
           </Route>
 
           <Route Component={AlternativeLayout}>

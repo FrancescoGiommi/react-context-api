@@ -54,4 +54,4 @@ export const PostContextProvider = ({ children }) => {
 };
 
 /* Esporto lo use per i consumers */
-export const usePostContext = () => useContext(PostListContext);
+export const usePostContext = () => useContext(PostContext);
