@@ -68,7 +68,7 @@ import ShowPost from "./pages/posts/ShowPosts";
 import StorePost from "./pages/posts/StorePosts";
 
 /* Import context */
-import CounterContext from "./contexts/CountContext";
+import { PostContextProvider } from "./contexts/PostContext";
 
 /* Import Outlet */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -76,7 +76,7 @@ import DefoultLayout from "./Layout/DefaultLayout";
 import AlternativeLayout from "./Layout/AlternativeLayout";
 function App() {
   return (
-    <CounterContext>
+    <PostContextProvider>
       <BrowserRouter>
         <Routes>
           <Route Component={DefoultLayout}>
@@ -101,7 +101,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </CounterContext>
+    </PostContextProvider>
   );
 }
 
