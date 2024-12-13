@@ -90,7 +90,9 @@ function App() {
             <Route path="/about" Component={AboutPage} />
             {/* Not Found */}
             <Route path="*" Component={NotFoundPage} />
+            {/* Post page */}
             <Route path="/postsPage" Component={PostPage} />
+            {/* Post list */}
             <Route path="/postList" Component={PostList} />
           </Route>
 

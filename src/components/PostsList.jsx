@@ -1,14 +1,21 @@
 import { usePostContext } from "../contexts/PostContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function PostList() {
-  const { postList } = usePostContext();
+  /* Importo context */
+  const { posts } = usePostContext();
+
   return (
     <>
+      {/* Genero le card */}
       <h1>Lista dei post</h1>
       <div className="container">
-        {postList.map((post) => (
-          <div className="card mb-3 mt-5" style={{ maxWidth: "540px" }}>
+        {posts.map((post) => (
+          <div
+            key={post.id}
+            className="card mb-3 mt-5"
+            style={{ maxWidth: "540px" }}
+          >
             <div className="row g-0">
               <div className="col-md-4">
                 <img src={post.image} alt="" />
