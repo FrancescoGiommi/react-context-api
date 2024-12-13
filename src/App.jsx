@@ -67,36 +67,41 @@ import IndexPosts from "./pages/posts/IndexPosts";
 import ShowPost from "./pages/posts/ShowPosts";
 import StorePost from "./pages/posts/StorePosts";
 
+/* Import context */
+import CounterContext from "./contexts/CountContext";
+
 /* Import Outlet */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DefoultLayout from "./Layout/DefaultLayout";
 import AlternativeLayout from "./Layout/AlternativeLayout";
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route Component={DefoultLayout}>
-          {/* Home */}
-          <Route path="/" Component={HomePage} />
-          {/* About */}
-          <Route path="/about" Component={AboutPage} />
-          {/* Not Found */}
-          <Route path="*" Component={NotFoundPage} />
-        </Route>
-
-        <Route Component={AlternativeLayout}>
-          <Route path="/posts">
-            {/* Index page */}
-            <Route index Component={IndexPosts} />
-            {/* Show page */}
-            <Route path=":id" Component={ShowPost} />
-            {/* Create page */}
-            <Route path="store" Component={StorePost} />
-            <Route />
+    <CounterContext>
+      <BrowserRouter>
+        <Routes>
+          <Route Component={DefoultLayout}>
+            {/* Home */}
+            <Route path="/" Component={HomePage} />
+            {/* About */}
+            <Route path="/about" Component={AboutPage} />
+            {/* Not Found */}
+            <Route path="*" Component={NotFoundPage} />
           </Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+
+          <Route Component={AlternativeLayout}>
+            <Route path="/posts">
+              {/* Index page */}
+              <Route index Component={IndexPosts} />
+              {/* Show page */}
+              <Route path=":id" Component={ShowPost} />
+              {/* Create page */}
+              <Route path="store" Component={StorePost} />
+              <Route />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CounterContext>
   );
 }
 
